@@ -8,12 +8,15 @@ from django.utils import timezone
 class Meteorological_Station(models.Model):
     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=False)
     longitude = models.DecimalField(max_digits=9, decimal_places=6, null=False)
-    altitude = models.DecimalField(max_digits=9, decimal_places=6, null=True)
+    altitude = models.DecimalField(max_digits=10, decimal_places=6, null=True)
     state = models.CharField(max_length=2, null=False)
     city = models.CharField(max_length=30, null=False)
 
     created_date = models.DateTimeField(default=timezone.now)
     edited_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.state + ' - ' + self.city
 
 
 # Dados da estação meteorológica
