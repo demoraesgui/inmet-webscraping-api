@@ -1,0 +1,8 @@
+<h1>All Stations</h1>
+{% for station in object_list %}
+<ul>
+  <li>state: {{ station.state }}</li>
+  <li>city: {{ station.city }}</li>
+
+</ul>
+{% endfor %}

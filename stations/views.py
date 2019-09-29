@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from .models import MeteorologicalStation
+
+
+class MeteorologicalStationListView(ListView):
+    model = MeteorologicalStation
+    template_name = 'meteorologicalstation_list.html'

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Meteorological_Station
+from .models import MeteorologicalStation
 # Register your models here.
 
-admin.site.register(Meteorological_Station)
+admin.site.register(MeteorologicalStation)

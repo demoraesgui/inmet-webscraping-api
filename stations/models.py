@@ -5,7 +5,7 @@ from django.utils import timezone
 
 
 # Criação da Model das Estações Meteorologicas
-class Meteorological_Station(models.Model):
+class MeteorologicalStation(models.Model):
     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=False)
     longitude = models.DecimalField(max_digits=9, decimal_places=6, null=False)
     altitude = models.DecimalField(max_digits=10, decimal_places=6, null=True)
@@ -20,9 +20,9 @@ class Meteorological_Station(models.Model):
 
 
 # Dados da estação meteorológica
-class Meteorological_Data(models.Model):
-    Meteorological_Station = models.ForeignKey(
-        Meteorological_Station, on_delete=models.DO_NOTHING, null=False, verbose_name="Estação Meteorológica")
+class MeteorologicalData(models.Model):
+    MeteorologicalStation = models.ForeignKey(
+        MeteorologicalStation, on_delete=models.DO_NOTHING, null=False, verbose_name="Estação Meteorológica")
 
     T_max = models.FloatField(null=True)
     T_min = models.FloatField(null=True)
