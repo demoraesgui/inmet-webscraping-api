@@ -7,5 +7,5 @@ from stations.models import MeteorologicalStation
 class MetereologicalStationSerializer(serializers.ModelSerializer):
     class Meta:
         model = MeteorologicalStation
-        fields = ('altitude', 'latitude', 'longitude', 'city',
+        fields = ('id','altitude', 'latitude', 'longitude', 'city',
                   'state', 'created_date', 'edited_date')
