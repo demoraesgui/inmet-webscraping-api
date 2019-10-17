@@ -36,3 +36,6 @@ class MeteorologicalData(models.Model):
 
     created_date = models.DateTimeField(default=timezone.now)
     edited_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.MeteorologicalStation.__str__() + ' - ' + str(self.date.strftime("%d-%m-%Y-%H:%M"))
