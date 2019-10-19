@@ -22,7 +22,7 @@ class MeteorologicalStation(models.Model):
 # Dados da estação meteorológica
 class MeteorologicalData(models.Model):
     MeteorologicalStation = models.ForeignKey(
-        MeteorologicalStation, on_delete=models.DO_NOTHING, null=False, verbose_name="Estação Meteorológica")
+        MeteorologicalStation, related_name='stationData', on_delete=models.DO_NOTHING, null=False, verbose_name="Estação Meteorológica")
 
     T_max = models.FloatField(null=True)
     T_min = models.FloatField(null=True)
