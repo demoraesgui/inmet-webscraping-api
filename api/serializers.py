@@ -18,7 +18,7 @@ class MetereologicalStationListSerializer(serializers.ModelSerializer):
         fields = ('id', 'altitude', 'latitude', 'longitude', 'city',
                   'state', 'created_date', 'edited_date')
 
-class MetereologicalStationSerializer(serializers.ModelSerializer):
+class MetereologicalStationDataSerializer(serializers.ModelSerializer):
     stationData = MeteorologicalDataSerializer(many=True, read_only=True)
 
     class Meta:

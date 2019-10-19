@@ -3,7 +3,7 @@ from rest_pandas import PandasView
 
 
 from stations.models import MeteorologicalStation, MeteorologicalData
-from .serializers import MetereologicalStationSerializer, MeteorologicalDataSerializer, MetereologicalStationListSerializer
+from .serializers import MetereologicalStationDataSerializer, MeteorologicalDataSerializer, MetereologicalStationListSerializer
 
 
 class MetereologicalStationListAPIView(generics.ListAPIView):
@@ -13,7 +13,7 @@ class MetereologicalStationListAPIView(generics.ListAPIView):
 
 class MetereologicalStationAPIView(generics.RetrieveAPIView):
     queryset = MeteorologicalStation.objects.all()
-    serializer_class = MetereologicalStationSerializer
+    serializer_class = MetereologicalStationDataSerializer
 
 
 class MeteorologicalDataDetailAPIView(generics.RetrieveAPIView):
@@ -21,9 +21,9 @@ class MeteorologicalDataDetailAPIView(generics.RetrieveAPIView):
     serializer_class = MeteorologicalDataSerializer
 
 
-class MetereologicalStationPandasView(PandasView):
+class MetereologicalStationPandasListView(PandasView):
     queryset = MeteorologicalStation.objects.all()
-    serializer_class = MetereologicalStationSerializer
+    serializer_class = MetereologicalStationListSerializer
 
     def get_pandas_filename(self, request, format):
         if format in ('csv'):
