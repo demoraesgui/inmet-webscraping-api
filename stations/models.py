@@ -16,7 +16,7 @@ class MeteorologicalStation(models.Model):
     edited_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.state + ' - ' + self.city
+        return self.city
 
 
 # Dados da estação meteorológica
