@@ -12,7 +12,7 @@ class Command(BaseCommand):
         webscraper = Webscraper()
         webscraper.get_stations_info()
         yesterday = (datetime.today() - timedelta(days=1)).strftime("%d/%m/%Y")
-        one_year_ago = (datetime.today() - timedelta(days=1)
+        one_year_ago = (datetime.today() - timedelta(days=2)
                         ).strftime("%d/%m/%Y")
 
         print(yesterday, one_year_ago)
