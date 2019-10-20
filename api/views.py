@@ -31,7 +31,7 @@ class MeteorologicalStationDataWithInitialDateAPIView(APIView):
         initial_date = initial_year + '-' + initial_month + '-' + initial_day
 
         query = MeteorologicalData.objects.filter(
-            MeteorologicalStation__pk=90, date__year=initial_year, date__range=[initial_date, datetime.today().strftime("%Y-%m-%d")])
+            MeteorologicalStation__pk=pk, date__year=initial_year, date__range=[initial_date, datetime.today().strftime("%Y-%m-%d")])
 
         serializer = MeteorologicalDataSerializer(query, many=True)
 
@@ -45,7 +45,7 @@ class MeteorologicalStationDataWithFinalDateAPIView(APIView):
         initial_date = initial_year + '-' + initial_month + '-' + initial_day
         final_date = final_year + '-' + final_month + '-' + final_day
         query = MeteorologicalData.objects.filter(
-            MeteorologicalStation__pk=90, date__year=initial_year, date__range=[initial_date, final_date])
+            MeteorologicalStation__pk=pk, date__year=initial_year, date__range=[initial_date, final_date])
 
         serializer = MeteorologicalDataSerializer(query, many=True)
 
